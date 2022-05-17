@@ -318,3 +318,135 @@ f 문자열 포매팅
 [1,2,3,4,5]
 # 그냥 더하기가 낫다.
 
+튜플(tuple)
+# 이건 생략
+
+딕셔너리
+>>> dic = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> a = {1:'hi'}
+>>> a = {'a':[1,2,3]}
+
+딕셔너리 쌍 추가하기
+>>> a = {1:'a'}
+>>> a[2] = 'b'	# 2가 key이고 'b'가 value이다.
+>>> a
+{1:'a',2:'b'}
+>>> a['name'] = 'pey'
+>>> a
+{1:'a',2:'b','name':'pey'}
+>>> a[3] = [1,2,3]
+>>> a
+{1:'a',2:'b','name':'pey',3:[1,2,3]}
+
+딕셔너리 요소 삭제하기
+>>> a = {1:'a',2:'b','name':'pey',3:[1,2,3]}
+>>> del a[1]
+>>> a
+{2:'b','name':'pey',3:[1,2,3]}
+>>> del a['name']
+>>> a
+{2:'b',3:[1,2,3]}
+
+딕셔너리에서 key를 사용해 value 얻기
+>>> grade = {'pey':10,'julliet':99}
+>>> grade['pey']
+10
+>>> grade['julliet']
+99
+
+>>> a = {1:'a',2:'b'}
+>>> a[1]
+'a'
+>>> a[2]
+'b'
+
+>>> a = {'a':1,'b':2}
+>>> a['a']
+1
+>>> a['b']
+2
+
+딕셔너리 관련 함수
+key 리스트 만들기
+>>> a = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> a.keys()
+dict_keys(['name','phone','birth'])	# dict_keys는 객체.
+# 사용 방법은 아래와 같다.
+>>> for k in a.keys():
+...    print(k)
+...
+name
+phone
+birth
+# 또는 리스트로 만들수 있다.
+>>> list(a.keys())
+['name','phone','birth']
+>>> list(a.keys())[0]
+'name'
+
+value 리스트 만들기
+>>> a = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> a.values()
+dict_values(['pey','0119993333','1118']) # dict_values는 객체.
+
+>>> for k in a.values():
+...    print(k)
+...
+pey
+0119993333
+1118
+
+>>> list(a.values())
+['pey','0119993333','1118']
+>>> list(a.values())[0]
+'pey'
+
+key, value 쌍 얻기
+>>> a = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> a.items()
+dict_items([('name','pey'),('phone','0119993333'),('birth','1118')])
+
+>>> for k in a.items():
+...    print(k)
+...
+('name','pey')
+('phone','0119993333')
+('birth','1118')
+# tuple이다.
+
+>>> list(a.items())[0][1]
+'pey'
+
+딕셔너리에서 값 추출하기
+>>> a = {'A':90,'B':80,'C':70}
+>>> a
+{'A':90,'B':80,'C':70}
+>>> a.pop('B')	# 'B' 항목의 value를 반환하고 삭제한다.
+80
+>>> a
+{'A':90,'C':70}
+
+딕셔너리의 모든 요소 지우기
+>>> a = {'A':90,'B':80,'C':70}
+>>> a.clear()
+>>> a
+{}	# 빈 딕셔너리가 된다.
+
+key로 value 얻기
+>>> a = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> a.get('name')
+'pey'
+# a['name']과 a.get('name')의 다른점은 아래와 같다.
+# 해당 key가 없을시 a['name']은 오류를 발생시키고
+# a.get('name')은 None을 반환한다. 그리고 get()은
+# 딕셔너리에 해당 key가 없을 경우 미리 정해둔 디폴트 값을 
+# 대신 가져오게 할 수 있다.
+>>> a.get('foo','bar')
+'bar'	# 딕셔너리에 'foo'라는 key가 없으므로 'bar'가 반환되었다.
+
+해당 key가 딕셔너리 안에 있는지 조사하기
+>>> a = {'name':'pey','phone':'0119993333','birth':'1118'}
+>>> 'name' in a
+True
+>>> 'email' in a
+False
