@@ -1,1 +1,37 @@
 pythonGuide
+
+문자열 포매팅
+숫자 대입
+>>> 'I eat %d apples.' %3
+'I eat 3 apples.'
+
+문자열 대입
+>>> 'I eat %s apples.' %'five'
+'I eat five apples.'
+
+숫자 변수 대입
+>>> number = 3
+>>> 'I eat %d apples.' %number
+'I eat 3 apples.'
+
+2개 이상 값 넣기
+>>> number = 3
+>>> day = 'three'
+>>> 'I ate %d apples. so I was sick for %s days.' %(number,day)
+'I ate 3 apples. so I was sick for three days.'
+
+포맷 코드
+>>> '%10s' %'hi'
+'        hi' # 총 10칸에서 오른쪽 정렬
+
+>>> '%-10sjane' %'hi'
+'hi        jane' # 총 10칸에서 왼쪽 정렬, 그 후 다음 문자 'jane'
+
+>>> '%0.4f' %3.42134234
+'3.4213' # 소수점 4자리까지 표현. 이때 반올림.
+
+>>> '%.4f' %3.42134234
+'3.4213' # 0은 생략할 수 있다.
+
+>>> '%10.4f' %3.42134234
+'    3.4213' # 총 10칸에서 오른쪽 정렬.
