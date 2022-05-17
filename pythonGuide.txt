@@ -109,3 +109,68 @@ f 문자열 포매팅
 >>> f'나의 이름은 {d['name']}입니다. 나이는 {d['age']}입니다.'
 '나의 이름은 홍길동입니다. 나이는 30입니다.'
 # 귀찮다. 위에 다른것들이랑 비슷하다.
+
+문자열 내장 함수
+문자 개수 세기 - count
+>>> a = 'hobby'
+>>> a.count('b') #문자열 중 문자 'b'의 개수를 반환한다.
+2
+
+위치 알려주기 - find
+>>> a = 'Python is the best choice'
+>>> a.find('b')
+14
+# 문자열에서 'b'가 처음 나온 위치. 'b'가 여러개 있어도 첫번째 위치만 반환.
+# find()인 경우 해당 문자가 없으면 -1을 반환.
+
+위치 알려주기 - index
+>>> a = 'Life is too short'
+>>> a.index('L')
+0
+# find()와 동일. 다른 점은 index() 경우 해당 문자가 없으면 오류가 발생한다.
+
+문자열 삽입 - join
+>>> ','.join('abcd')
+'a,b,c,d'
+>>> ','.join(['a','b','c','d'])
+'a,b,c,d'
+>>> ''.join(['a','b','c','d'])
+'abcd'
+
+소문자를 대문자로 변환 - upper
+>>> a = 'hi'
+>>> a.upper()
+'HI'
+
+대문자를 소문자로 변환 - lower
+>>> a = 'HI'
+>>> a.lower()
+'hi'
+
+왼쪽 공백 지우기 - lstrip
+>>> a = ' hi '
+>>> a.lstrip()
+'hi '
+
+오른쪽 공백 지우기 - rstrip
+>>> a = ' hi '
+>>> a.rstrip()
+' hi'
+
+양쪽 공백 지우기 - strip
+>>> a = ' hi '
+>>> a.strip()
+'hi'
+
+문자열 바꾸기 - replace
+>>> a = 'Life is too short'
+>>> a.replace('Life','Your leg')
+'Your leg is too short'
+
+문자열 나누기 - split
+>>> a = 'Life is too short'
+>>> a.split() # 아무 문자도 없으면 공백,탭,엔터로 구분한다.
+['Life', 'is', 'too', 'short']
+>>> b = 'a:b:c:d'
+>>> b.split(':')
+['a','b','c','d']
