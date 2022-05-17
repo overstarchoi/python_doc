@@ -35,3 +35,63 @@ pythonGuide
 
 >>> '%10.4f' %3.42134234
 '    3.4213' # 총 10칸에서 오른쪽 정렬.
+
+format 함수를 사용한 포매팅
+숫자 바로 대입하기
+>>> 'I eat {0} apples.'.format(3)
+'I eat 3 apples.'
+
+문자열 바로 대입하기
+>>> 'I eat {0} apples.'.format('five')
+'I eat five apples.'
+
+숫자 변수 대입하기
+>>> number = 3
+>>> 'I eat {0} apples.'.format(number)
+'I eat 3 apples.'
+
+2개 이상 값 넣기
+>>> number = 10
+>>> day = 'three'
+>>> 'I ate {0} apples. so I was sick for {1} days.'.format(number,day)
+'I ate 3 apples. so I was sick for three days.'
+
+이름으로 넣기
+>>> 'I ate {number} apples. so I was sick for {day} days.'.format(number=10,day=3)
+'I ate 10 apples. so I was sick for 3 days.'
+
+인덱스와 이름 혼용해서 넣기
+>>> 'I ate {0} apples. so I was sick for {day} days.'.format(10,day='three')
+'I ate 10 apples. so I was sick for three days.'
+
+왼쪽 정렬
+>>> '{0:<10}'.format('hi') # 0:인덱스는 0, <:왼쪽정렬, 10:총10칸.
+'hi        ' # 총 10칸에서 왼쪽 정렬
+
+오른쪽 정렬
+>>> '{0:>10}'.format('hi') # >:오른쪽 정렬.
+'        hi' # 총 10칸에서 오른쪽 정렬
+
+가운데 정렬
+>>> '{0:^10}'.format('hi') # ^:가운데 정렬.
+'    hi    ' # 총 10칸에서 가운데 정렬
+
+공백 채우기
+>>> '{0:=<10}'.format('hi')
+'hi========' # 총 10칸에서 왼쪽 정렬. 나머지는 = 로 채움.
+>>> '{0:=^10}'.format('hi')
+'====hi====' # 총 10칸에서 가운데 정렬. 나머지는 = 로 채움.
+>>> '{0:!>10}'.format('hi')
+'!!!!!!!!hi' # 총 10칸에서 오른쪽 정렬. 나머지는 ! 로 채움.
+
+소수점 표현하기
+>>> y = 3.42134234
+>>> '{0:0.4f}'.format(y)
+'3.4213'
+>>> '{0:10.4f}'.format(y)
+'    3.4213' # 총 10칸에서 오른쪽 정렬.
+
+중괄호('{','}') 문자 표현하기
+# 다음과 같이 중괄호를 두번 연속 사용하면 된다.
+>>> '{{and}}'.format()
+'{and}'
